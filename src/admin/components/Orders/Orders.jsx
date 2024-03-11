@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { Box, Center, Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
+import { Box, Center, Table, Tbody, Th, Thead, Tr } from '@chakra-ui/react'
 import OrderItem from './OrderItem'
 import Pagination from '../Pagination/Pagination'
 import { getOrders } from '../Utils/database'

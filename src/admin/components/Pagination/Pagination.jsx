@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import { HStack, IconButton } from '@chakra-ui/react'
+import { HStack } from '@chakra-ui/react'
 import Button from './Button';
 import Cell from './Cell'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const Pagination = () => {
   const [currPage, setCurrPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(1);
+  // const [totalPage, setTotalPage] = useState(1);
+
+  const totalPage = 1;
   let cells = [];
 
   for (let i = 1; i <= totalPage; i++) {

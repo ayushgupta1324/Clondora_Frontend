@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Box, Grid } from '@chakra-ui/react'
-import { getProductsApi } from '../Utils/database'
+// import { getProductsApi } from '../Utils/database'
 import ProductCard from './ProductCard'
 import { getProducts } from '../Utils/database'
 
