@@ -10,7 +10,7 @@ const getStatsApi = () => {
 
 const getOrders = async () => {
     const { data } = await axios.get(`https://white-lovebird-ring.cyclic.app/cart`);
-    return []
+    return data
 }
 const updateOrder = () => {
 

@@ -1,104 +1,204 @@
-import React, { useState } from 'react'
-import { Helmet } from 'react-helmet'
-import { Box, Button, Flex, FormControl, FormLabel, Grid, HStack, Image, Input, Select, Textarea, useToast, VStack } from '@chakra-ui/react'
-import { addProductApi } from '../Utils/database';
+import React, { useState } from "react";
+import { Helmet } from "react-helmet";
+import {
+  Box,
+  Button,
+  Flex,
+  FormControl,
+  FormLabel,
+  Grid,
+  HStack,
+  Image,
+  Input,
+  Select,
+  useToast,
+  VStack,
+} from "@chakra-ui/react";
+import { addProductApi } from "../Utils/database";
 
 const AddProduct = () => {
-  const [image, setImage] = useState("https://assets.burberry.com/is/image/Burberryltd/7D3E2F24-04F9-4837-8CF8-2DDE40B0BA52?$BBY_V2_ML_1x1$&wid=1251&hei=1251")
+  const [image, setImage] = useState(
+    "https://assets.burberry.com/is/image/Burberryltd/7D3E2F24-04F9-4837-8CF8-2DDE40B0BA52?$BBY_V2_ML_1x1$&wid=1251&hei=1251"
+  );
   const [images, setImages] = useState(["", "", "", ""]);
   const [name, setName] = useState("");
-  const [subtitle, setSubTitle] = useState("");
   const [actualPrice, setActualPrice] = useState("");
   const [category, setCategory] = useState("Mens");
   const [productCategory, setProductCategory] = useState("Jacket");
-  const toast = useToast()
+  const toast = useToast();
 
   const changeImages = (index) => {
-    const url = window.prompt("Image url")
+    const url = window.prompt("Image url");
     setImages((prev) => {
-      return prev.map((item, idx) => idx === index ? url : item)
-    })
-  }
+      return prev.map((item, idx) => (idx === index ? url : item));
+    });
+  };
 
   const publishProduct = async () => {
-
     if (name === "" || actualPrice === "") {
       toast({
-        title: 'All field requireds.',
-        status: 'error',
+        title: "All field requireds.",
+        status: "error",
         duration: 2000,
         isClosable: true,
-        position: "top"
-      })
-      return
+        position: "top",
+      });
+      return;
     }
-    const product = { product_title: name, product_img: image, product_price: parseInt(actualPrice), product_category: productCategory, category, quantity: 1 }
+    const product = {
+      product_title: name,
+      product_img: image,
+      product_price: parseInt(actualPrice),
+      product_category: productCategory,
+      category,
+      quantity: 1,
+    };
 
     try {
-      const res = await addProductApi(product);
+      await addProductApi(product);
       toast({
         title: "Product added",
-        status: 'success',
+        status: "success",
         duration: 2000,
         isClosable: true,
-        position: "top"
-      })
+        position: "top",
+      });
       setName("");
-      setActualPrice("")
+      setActualPrice("");
     } catch (error) {
       toast({
-        title: 'Can not add Product',
-        status: 'error',
+        title: "Can not add Product",
+        status: "error",
         duration: 2000,
         isClosable: true,
-        position: "top"
-      })
+        position: "top",
+      });
     }
-
-
-  }
+  };
 
   return (
     <>
       <Helmet>
         <title>Add Product</title>
       </Helmet>
-      <Flex p="20px" gap="20px" border="1px solid #e4e4e4" minHeight="85vh" bg="white">
+      <Flex
+        p="20px"
+        gap="20px"
+        border="1px solid #e4e4e4"
+        minHeight="85vh"
+        bg="white"
+      >
         <Box w="35%">
           <Image src={image} alt="" border="1px solid #e4e4e4" />
-          <Grid mt="15px" gap="15px" gridTemplateColumns="repeat(4,1fr)" gridTemplateRows="80px">
-            <Box border="1px solid #e4e4e4" onClick={() => changeImages(0)} cursor="pointer">
-              {images[0] != "" && <Image src={images[0]} h="100%" w="100%" alt="" border="1px solid #e4e4e4" />}
+          <Grid
+            mt="15px"
+            gap="15px"
+            gridTemplateColumns="repeat(4,1fr)"
+            gridTemplateRows="80px"
+          >
+            <Box
+              border="1px solid #e4e4e4"
+              onClick={() => changeImages(0)}
+              cursor="pointer"
+            >
+              {images[0] !== "" && (
+                <Image
+                  src={images[0]}
+                  h="100%"
+                  w="100%"
+                  alt=""
+                  border="1px solid #e4e4e4"
+                />
+              )}
             </Box>
-            <Box border="1px solid #e4e4e4" onClick={() => changeImages(1)} cursor="pointer">
-              {images[1] != "" && <Image src={images[1]} h="100%" w="100%" alt="" border="1px solid #e4e4e4" />}
+            <Box
+              border="1px solid #e4e4e4"
+              onClick={() => changeImages(1)}
+              cursor="pointer"
+            >
+              {images[1] !== "" && (
+                <Image
+                  src={images[1]}
+                  h="100%"
+                  w="100%"
+                  alt=""
+                  border="1px solid #e4e4e4"
+                />
+              )}
             </Box>
-            <Box border="1px solid #e4e4e4" onClick={() => changeImages(2)} cursor="pointer">
-              {images[2] != "" && <Image src={images[2]} h="100%" w="100%" alt="" border="1px solid #e4e4e4" />}
+            <Box
+              border="1px solid #e4e4e4"
+              onClick={() => changeImages(2)}
+              cursor="pointer"
+            >
+              {images[2] !== "" && (
+                <Image
+                  src={images[2]}
+                  h="100%"
+                  w="100%"
+                  alt=""
+                  border="1px solid #e4e4e4"
+                />
+              )}
             </Box>
-            <Box border="1px solid #e4e4e4" onClick={() => changeImages(3)} cursor="pointer">
-              {images[3] != "" && <Image src={images[3]} h="100%" w="100%" alt="" border="1px solid #e4e4e4" />}
+            <Box
+              border="1px solid #e4e4e4"
+              onClick={() => changeImages(3)}
+              cursor="pointer"
+            >
+              {images[3] !== "" && (
+                <Image
+                  src={images[3]}
+                  h="100%"
+                  w="100%"
+                  alt=""
+                  border="1px solid #e4e4e4"
+                />
+              )}
             </Box>
           </Grid>
         </Box>
-        <VStack p="20px" spacing="20px" align="stretch" flex="1" border="1px solid #e4e4e4">
+        <VStack
+          p="20px"
+          spacing="20px"
+          align="stretch"
+          flex="1"
+          border="1px solid #e4e4e4"
+        >
           <Flex gap="20px">
             <FormControl flex="3">
               <FormLabel>Title</FormLabel>
-              <Input value={name} onChange={(e) => setName(e.target.value)} borderRadius="0" />
+              <Input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                borderRadius="0"
+              />
             </FormControl>
             <FormControl flex="1">
               <FormLabel>Price</FormLabel>
-              <Input type="number" value={actualPrice} onChange={(e) => setActualPrice(e.target.value)} borderRadius="0" />
+              <Input
+                type="number"
+                value={actualPrice}
+                onChange={(e) => setActualPrice(e.target.value)}
+                borderRadius="0"
+              />
             </FormControl>
           </Flex>
           <FormControl>
             <FormLabel>Image</FormLabel>
-            <Input value={image} onChange={(e) => setImage(e.target.value)} borderRadius="0" />
+            <Input
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              borderRadius="0"
+            />
           </FormControl>
           <FormControl>
             <FormLabel>Category</FormLabel>
-            <Select value={category} onChange={(e) => setCategory(e.target.value)} borderRadius="0">
+            <Select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              borderRadius="0"
+            >
               <option value="Mens">Mens</option>
               <option value="Womens">Womens</option>
               <option value="Children">Kids</option>
@@ -106,7 +206,11 @@ const AddProduct = () => {
           </FormControl>
           <FormControl>
             <FormLabel>Product Category</FormLabel>
-            <Select value={productCategory} onChange={(e) => setProductCategory(e.target.value)} borderRadius="0">
+            <Select
+              value={productCategory}
+              onChange={(e) => setProductCategory(e.target.value)}
+              borderRadius="0"
+            >
               <option value="Jacket">Jacket</option>
               <option value="Bag">Bag</option>
               <option value="tshirt">T shirt</option>
@@ -123,7 +227,7 @@ const AddProduct = () => {
         </VStack>
       </Flex>
     </>
-  )
-}
+  );
+};
 
-export default AddProduct
+export default AddProduct;
