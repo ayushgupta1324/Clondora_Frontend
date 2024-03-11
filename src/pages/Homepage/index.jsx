@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Image, Flex, Text, Icon, Grid, Input } from "@chakra-ui/react";
-import Footer from "../components/Footer";
+import { Box, Image, Text, Grid } from "@chakra-ui/react";
+import Footer from "components/Footer";
 import { Link } from "react-router-dom";
+
 const Homepage = () => {
   return (
     <div>

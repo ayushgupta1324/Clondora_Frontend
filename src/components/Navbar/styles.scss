@@ -1,9 +1,16 @@
 @import "../../theme.scss";
 
 .navbar-container {
+  position: fixed;
+  width: 100%;
   .navbar-wrapper {
-    padding: 12px 0;
+    position: relative;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+
     .menu-logo-wrapper {
+      width: 15%;
       .menu-icon {
         display: none;
       }
@@ -16,6 +23,25 @@
         display: none;
       }
     }
+
+    .menu-link-wrapper {
+      width: 70%;
+      justify-content: center;
+    }
+
+    .menu-cart-wrapper {
+      width: 15%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .cart-logo {
+        cursor: pointer;
+      }
+    }
+  }
+  .search-modal {
+    position: relative;
   }
 }
 
@@ -29,6 +55,7 @@
     .navbar-wrapper {
       .menu-logo-wrapper {
         display: flex;
+        width: 60%;
         gap: 8px;
         align-items: center;
         .menu-icon {
@@ -85,9 +112,14 @@
         }
       }
       .menu-link-wrapper {
+        display: none;
         .menu-link {
           display: none;
         }
+      }
+
+      .menu-cart-wrapper {
+        width: 30%;
       }
     }
   }

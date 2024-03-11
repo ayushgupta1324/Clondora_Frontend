@@ -1,54 +1,54 @@
+import "./styles.scss";
 import React from "react";
-import { FaUserAlt } from "react-icons/fa";
 import {
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
   Text,
   Icon,
   Button,
   Flex,
-  useToast
+  useToast,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { FaRegUser } from "react-icons/fa";
+import { TbLogin } from "react-icons/tb";
 import { FaUserPlus } from "react-icons/fa";
-import { FaUserCheck } from "react-icons/fa";
-import { userLogout } from "../redux/AuthReducer/action";
+import { userLogout } from "redux/AuthReducer/action";
+
 const Menubar = ({ item1, item2 }) => {
   const { name, token } = useSelector((store) => store.auth);
-  // console.log(token, name);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-  const toast = useToast()
-  const handleLogout = () =>{
+  const navigate = useNavigate();
+  const toast = useToast();
+  const handleLogout = () => {
     toast({
-      title: 'Logged out Successfully',
-      status: 'success',
+      title: "Logged out Successfully",
+      status: "success",
       duration: 2000,
       isClosable: true,
-      position:'top'
-    })
-    navigate("/")
-    dispatch(userLogout())
-  }
+      position: "top",
+    });
+    navigate("/");
+    dispatch(userLogout());
+  };
 
   return (
-    <div>
+    <div className="menu-container">
       <Menu>
-        <MenuButton as={Button}>
+        <MenuButton as={Button} className='menu-button'>
           <Link to="/login">
             {name ? (
               <Text fontWeight={"500"} fontSize="20px">
                 {name}
               </Text>
             ) : (
-              <Icon as={FaUserAlt} fontSize={"20px"} fontWeight="500" />
+              <div>
+                <FaRegUser className='profile-logo'/>
+              </div>
+              // <Icon className='profile-logo' as={FaRegUser} fontSize={"20px"} fontWeight="500" />
             )}
           </Link>
         </MenuButton>
@@ -65,13 +65,9 @@ const Menubar = ({ item1, item2 }) => {
           </MenuItem>
           <MenuItem>
             {token ? (
-              <Flex
-                gap="20px"
-                alignItems={"center"}
-                onClick={handleLogout}
-              >
+              <Flex gap="20px" alignItems={"center"} onClick={handleLogout}>
                 <Icon as={FaUserPlus} fontSize={"20px"} fontWeight="500" />
-                
+
                 <Text fontSize={"20px"} fontWeight="500">
                   Logout
                 </Text>
@@ -79,7 +75,7 @@ const Menubar = ({ item1, item2 }) => {
             ) : (
               <Link to="/login">
                 <Flex gap="20px" alignItems={"center"}>
-                  <Icon as={FaUserPlus} fontSize={"20px"} fontWeight="500" />
+                  <Icon as={TbLogin} fontSize={"20px"} fontWeight="500" />
                   <Text fontSize={"20px"} fontWeight="500">
                     Login
                   </Text>
