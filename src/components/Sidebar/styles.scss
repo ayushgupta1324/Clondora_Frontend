@@ -1,0 +1,19 @@
+.side-menu-wrapper {
+  z-index: 1000;
+  .sidebar-menu-link {
+    display: none;
+  }
+}
+
+@media (max-width: $device-small) {
+  .side-menu-wrapper {
+    z-index: 1000;
+    .sidebar-menu-link {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: left;
+      padding: 8px 16px;
+    }
+  }
+}
