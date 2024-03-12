@@ -38,7 +38,7 @@ const Menubar = ({ item1, item2 }) => {
   return (
     <div className="menu-container">
       <Menu>
-        <MenuButton as={Button} className='menu-button'>
+        <MenuButton as={Button} className="menu-button">
           <Link to="/login">
             {name ? (
               <Text fontWeight={"500"} fontSize="20px">
@@ -46,7 +46,7 @@ const Menubar = ({ item1, item2 }) => {
               </Text>
             ) : (
               <div>
-                <FaRegUser className='profile-logo'/>
+                <FaRegUser className="profile-logo" />
               </div>
               // <Icon className='profile-logo' as={FaRegUser} fontSize={"20px"} fontWeight="500" />
             )}

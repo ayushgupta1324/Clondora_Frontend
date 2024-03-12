@@ -8,6 +8,7 @@ import { BsHandbagFill } from "react-icons/bs"
 import { RouteStrings } from 'Utils/Routes/RouteStrings';
 import Menubar from 'components/ProfileMenu';
 import SearchModal from 'components/SearchModal';
+import Sidebar from 'components/Sidebar';
 // import { useSelector } from 'react-redux'
 
 const Navbar = () => {
@@ -62,9 +63,7 @@ const Navbar = () => {
                 <div onClick={()=>handleLoginNavigate()}>LOGIN</div>
               </div>
               </div>
-            <Link onClick={toggleDrawer} to={RouteStrings.men}><div className='menu-link sidebar-menu-link'>Men</div></Link>
-            <Link onClick={toggleDrawer} to={RouteStrings.women}><div className='menu-link sidebar-menu-link'>Women</div></Link>
-            <Link onClick={toggleDrawer} to={RouteStrings.kids}><div className='menu-link sidebar-menu-link'>Children</div></Link>
+              <Sidebar toggleDrawer={toggleDrawer}/>
             </div>
             {isDrawerOpen && <div className="overlay" onClick={toggleDrawer}></div>}
             <Link to="/"><Text fontSize={"20px"} fontWeight="500" >CLONDORA</Text></Link>
@@ -80,9 +79,9 @@ const Navbar = () => {
           <Menubar />
           </div>
         </Flex>
-        {
+        {/* {
           showSearchModal && <SearchModal className='search-modal'/>
-        }
+        } */}
     </div>
   )
 }
