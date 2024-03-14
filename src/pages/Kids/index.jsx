@@ -32,7 +32,7 @@ const KidsPage = () => {
       <Heading fontSize="16px">Kids’S OUTERWEAR</Heading>
       <Text fontSize="14px" m="auto" maxW={["70%", "50%", "30%"]}>
         From quilted jackets and puffer gilets to cotton piqué dresses and
-        skirts, explore girls’ clothing awash with Burberry Check and Thomas
+        skirts, explore girls’ clothing awash with Clondora Check and Thomas
         Bear prints
       </Text>
 

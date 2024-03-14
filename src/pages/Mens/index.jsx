@@ -1,14 +1,21 @@
-import { Box, Grid, Heading, HStack, Select, Text } from "@chakra-ui/react";
-import axios from "axios";
+import "./styles.scss";
 import React, { useEffect, useState } from "react";
+import { Box, Grid, Heading, HStack, Select, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
-import Product from "../../components/product";
-import SkeletonComponent from "../../components/SkeletonComponent";
+import axios from "axios";
+import SkeletonComponent from "components/SkeletonComponent";
+import Product from "components/product";
+
 const MensPage = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [sort, setSort] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    getProducts();
+  }, [sort]);
 
   const getProducts = async () => {
     const { data } = await axios.get(
@@ -21,17 +28,15 @@ const MensPage = () => {
   const changeCategory = (category) => {
     navigate(`/${category}`);
   };
-  useEffect(() => {
-    setIsLoading(true);
-    getProducts();
-  }, [sort]);
 
   return (
     <>
-      <Box pb="50px">
-        <Heading fontSize="16px">Men’S OUTERWEAR</Heading>
+      <Box className="page-container" pb="50px">
+        <div className="page-heading" fontSize="16px">
+          Men’s OUTERWEAR
+        </div>
         <Text fontSize="14px" m="auto" maxW={["70%", "50%", "30%"]}>
-          Honouring the spirit of adventure inherent in every Burberry garment,
+          Honouring the spirit of adventure inherent in every Clondora garment,
           the men’s outerwear collection mixes timeless trench coats with modern
           puffer jackets in seasonal Night Check.
         </Text>
@@ -80,16 +85,11 @@ const MensPage = () => {
         {isLoading ? (
           <SkeletonComponent />
         ) : (
-          <Grid
-            mt="50px"
-            mb="50px"
-            gap="2px"
-            gridTemplateColumns="repeat(4,1fr)"
-          >
+          <div className="product-container">
             {products.map((item) => {
               return <Product key={item._id} {...item} />;
             })}
-          </Grid>
+          </div>
         )}
       </Box>
     </>

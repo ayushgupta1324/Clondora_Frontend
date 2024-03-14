@@ -8,7 +8,7 @@ const Homepage = () => {
     <div>
       <Box pt="96px">
         <Grid templateColumns={"repeat(2,1fr)"} gap="5px">
-          <Link to="/womens">
+          <Link to="/women">
             <Box>
               <Image
                 src="https://assets.burberry.com/is/image/Burberryltd/7D3E2F24-04F9-4837-8CF8-2DDE40B0BA52?$BBY_V2_ML_1x1$&wid=1251&hei=1251"

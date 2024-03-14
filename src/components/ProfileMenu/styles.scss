@@ -1,13 +1,13 @@
 .menu-container {
-  background-color: white !important;
+  background-color: transparent !important;
   .menu-button {
-    background-color: white;
+    background-color: transparent;
     padding: 0;
     // .profile-logo {
     //   background-color: white;
     // }
     &:hover {
-      background-color: white;
+      background-color: transparent;
       font-weight: bold;
     }
   }

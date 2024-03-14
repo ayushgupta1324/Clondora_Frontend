@@ -128,7 +128,7 @@ const SingleProductPage = () =>{
                                 <Text fontSize="14px" fontWeight="500" letterSpacing="0" lineHeight="20px" color="#000" margin="0 40px 0 0">Collect-in-Store</Text>
                                     <Text color="#333" paddingBottom={"30px"}>Order online today and pick up your items in store as early as tomorrow</Text>
                                 <Text fontSize="14px" fontWeight="500" letterSpacing="0" lineHeight="20px" color="#000" margin="0 40px 0 0">Free Gift Packaging</Text>
-                                    <Text color="#333" paddingBottom={"30px"}>Our gift packaging includes a signature Burberry gift box finished with a hand-tied ribbon</Text>
+                                    <Text color="#333" paddingBottom={"30px"}>Our gift packaging includes a signature Clondora gift box finished with a hand-tied ribbon</Text>
                                 <Text fontSize="14px" fontWeight="500" letterSpacing="0" lineHeight="20px" color="#000" margin="0 40px 0 0">Free Returns</Text>
                                     <Text color="#333" paddingBottom={"30px"}>Enjoy free returns on your order</Text>
                                 </Box>
@@ -144,7 +144,7 @@ const SingleProductPage = () =>{
                     <Flex alignItems={"center"}>
                     <RiStore3Fill/><Link paddingLeft={"4px"}>Find in Store</Link>
                     </Flex>
-                    <Text align={"left"} paddingBottom="30px">Find this item in your closest Burberry store.</Text>
+                    <Text align={"left"} paddingBottom="30px">Find this item in your closest Clondora store.</Text>
 
                     <Flex alignItems={"center"}>
                     <BsFillCalendarCheckFill/><Link paddingLeft={"4px"}>Book an appointment</Link>
@@ -152,7 +152,7 @@ const SingleProductPage = () =>{
                     <Text align={"left"} paddingBottom="30px">In-store, virtual, or after-care appointment – depending on your country.</Text>
                     <hr/>
                     <Text align={"left"} fontSize="14px" fontWeight="500" letterSpacing="0" line-height="20px" textTransform="uppercase" color="#000" py="16px">PRODUCT DETAILS</Text>
-                    <Text align={"left"} paddingBottom="24px">The iconic Burberry trench, made in Yorkshire from shower-resistant gabardine.</Text>
+                    <Text align={"left"} paddingBottom="24px">The iconic Clondora trench, made in Yorkshire from shower-resistant gabardine.</Text>
                     <Text align={"left"}>-Coat length: 95cm/37.4in. This is based on a size UK 6.</Text>
                     <Text align={"left"}>-Model’s height: 177cm/5ft 10in. Model wears size UK 8.</Text>
                 </Box>

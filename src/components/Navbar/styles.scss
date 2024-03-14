@@ -1,10 +1,10 @@
-@import "../../theme.scss";
+@import "./theme.scss";
 
 .navbar-container {
-  position: fixed;
+  // position: fixed;
   width: 100%;
   .navbar-wrapper {
-    position: relative;
+    // position: relative;
     padding: 12px 24px;
     display: flex;
     justify-content: space-between;
@@ -15,14 +15,26 @@
         display: none;
       }
 
-      .offer-auth-wrapper {
-        display: none;
+      .logo .scrolled {
+        color: white;
       }
+
+      // .offer-auth-wrapper {
+      //   display: none;
+      // }
     }
 
     .menu-link-wrapper {
       width: 70%;
       justify-content: center;
+
+      .menu-link {
+        display: block;
+      }
+
+      .menu-link.scrolled {
+        color: #c6c6c6;
+      }
     }
 
     .menu-cart-wrapper {
@@ -35,6 +47,11 @@
       }
     }
   }
+
+  .navbar-wrapper.scrolled {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
   // .search-modal {
   //   position: relative;
   // }
@@ -57,47 +74,6 @@
         .menu-icon {
           display: block;
           font-size: 20px;
-        }
-        .offer-auth-wrapper {
-          position: relative;
-          display: block;
-          .auth-navigate-wrapper {
-            position: absolute;
-            display: flex;
-            gap: 4px;
-            bottom: 2px;
-            right: 0;
-            left: 132px;
-            div {
-              font-weight: 500;
-              font-size: 10px;
-            }
-          }
-        }
-
-        .overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.3);
-          z-index: 998;
-        }
-
-        .drawer {
-          position: fixed;
-          top: 0;
-          left: -240px;
-          width: 240px;
-          height: 100%;
-          background-color: white;
-          transition: left 0.3s ease;
-          z-index: 999;
-        }
-
-        .drawer.open {
-          left: 0;
         }
       }
       .menu-link-wrapper {
