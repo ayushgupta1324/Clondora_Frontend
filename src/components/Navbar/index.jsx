@@ -8,7 +8,7 @@ import { BsHandbagFill } from "react-icons/bs";
 import { RouteStrings } from "Utils/Routes/RouteStrings";
 import Menubar from "components/ProfileMenu";
 import Sidebar from "components/Sidebar";
-import SearchModal from 'components/SearchModal';
+import SearchModal from "components/SearchModal";
 // import { useSelector } from 'react-redux'
 
 const Navbar = () => {
@@ -17,6 +17,7 @@ const Navbar = () => {
   // const {data}=useSelector((store)=>store.cart)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [showSearchModal, setShowSearchModal] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutsideDrawer);
@@ -24,6 +25,18 @@ const Navbar = () => {
       document.removeEventListener("click", handleClickOutsideDrawer);
     };
   }, []);
+
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    setIsScrolled(scrollTop > 0);
+  };
 
   // Function to toggle the drawer state
   const toggleDrawer = () => {
@@ -46,13 +59,12 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <Flex
-        className="navbar-wrapper"
+        className={`navbar-wrapper ${isScrolled && "scrolled"}`}
         alignItems={"center"}
         zIndex={"500"}
         justifyContent="space-between"
         position="fixed"
         w="100%"
-        bg="white"
       >
         <Box className="menu-logo-wrapper">
           <GiHamburgerMenu
@@ -66,35 +78,51 @@ const Navbar = () => {
             isDrawerOpen={isDrawerOpen}
           />
           <Link to="/">
-            <Text fontSize={"20px"} fontWeight="500">
+            <Text
+              className={`logo ${isScrolled && "scrolled"}`}
+              fontSize={"20px"}
+              fontWeight="500"
+            >
               CLONDORA
             </Text>
           </Link>
         </Box>
         <Flex className="menu-link-wrapper" gap="24px">
-          <Link className="menu-link" to={RouteStrings.men}>
+          <Link
+            className={`menu-link ${isScrolled && "scrolled"}`}
+            to={RouteStrings.men}
+          >
             <Text
               fontSize={"20px"}
               fontWeight="500"
               _hover={{ borderBottom: "1px solid black", cursor: "pointer" }}
+              // color={isScrolled ? "white" : "black"}
             >
               Men
             </Text>
           </Link>
-          <Link className="menu-link" to={RouteStrings.women}>
+          <Link
+            className={`menu-link ${isScrolled && "scrolled"}`}
+            to={RouteStrings.women}
+          >
             <Text
               fontSize={"20px"}
               fontWeight="500"
               _hover={{ borderBottom: "1px solid black", cursor: "pointer" }}
+              // color={isScrolled ? "white" : "black"}
             >
               Women
             </Text>
           </Link>
-          <Link className="menu-link" to={RouteStrings.kids}>
+          <Link
+            className={`menu-link ${isScrolled && "scrolled"}`}
+            to={RouteStrings.kids}
+          >
             <Text
               fontSize={"20px"}
               fontWeight="500"
               _hover={{ borderBottom: "1px solid black", cursor: "pointer" }}
+              // color={isScrolled ? "white" : "black"}
             >
               Children
             </Text>

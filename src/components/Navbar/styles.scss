@@ -1,4 +1,4 @@
-@import "../../theme.scss";
+@import "./theme.scss";
 
 .navbar-container {
   // position: fixed;
@@ -15,6 +15,10 @@
         display: none;
       }
 
+      .logo .scrolled {
+        color: white;
+      }
+
       // .offer-auth-wrapper {
       //   display: none;
       // }
@@ -23,6 +27,14 @@
     .menu-link-wrapper {
       width: 70%;
       justify-content: center;
+
+      .menu-link {
+        display: block;
+      }
+
+      .menu-link.scrolled {
+        color: #c6c6c6;
+      }
     }
 
     .menu-cart-wrapper {
@@ -35,6 +47,11 @@
       }
     }
   }
+
+  .navbar-wrapper.scrolled {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
   // .search-modal {
   //   position: relative;
   // }

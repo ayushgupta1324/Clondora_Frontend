@@ -10,7 +10,7 @@ const Footer = () => {
                         SIGN UP
                     </Text>
                     <Text fontSize="16px" textAlign={"start"}>
-                    Sign up below for updates about the world of Burberry, including collection launches and early access to limited-edition products and collaborations.
+                    Sign up below for updates about the world of Clondora, including collection launches and early access to limited-edition products and collaborations.
                     </Text>
                     <Input placeholder="Email" border="none"></Input>
                 </Box>
