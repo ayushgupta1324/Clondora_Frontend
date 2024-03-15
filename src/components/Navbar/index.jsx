@@ -1,7 +1,15 @@
 import "./styles.scss";
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Input,
+  InputGroup,
+  InputRightAddon,
+  InputRightElement,
+  Text,
+} from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsHandbagFill } from "react-icons/bs";
@@ -96,7 +104,6 @@ const Navbar = () => {
               fontSize={"20px"}
               fontWeight="500"
               _hover={{ borderBottom: "1px solid black", cursor: "pointer" }}
-              // color={isScrolled ? "white" : "black"}
             >
               Men
             </Text>
@@ -109,7 +116,6 @@ const Navbar = () => {
               fontSize={"20px"}
               fontWeight="500"
               _hover={{ borderBottom: "1px solid black", cursor: "pointer" }}
-              // color={isScrolled ? "white" : "black"}
             >
               Women
             </Text>
@@ -122,14 +128,18 @@ const Navbar = () => {
               fontSize={"20px"}
               fontWeight="500"
               _hover={{ borderBottom: "1px solid black", cursor: "pointer" }}
-              // color={isScrolled ? "white" : "black"}
             >
               Children
             </Text>
           </Link>
         </Flex>
         <div className="menu-cart-wrapper">
-          <AiOutlineSearch onClick={() => setShowSearchModal(true)} />
+          <InputGroup className="input-group">
+            <Input placeholder="Search Products" />
+            <InputRightElement>
+              <AiOutlineSearch onClick={() => setShowSearchModal(true)} />
+            </InputRightElement>
+          </InputGroup>
           <BsHandbagFill
             className="cart-logo"
             onClick={() => navigate(RouteStrings.cart)}
@@ -137,7 +147,6 @@ const Navbar = () => {
           <Menubar />
         </div>
       </Flex>
-      {showSearchModal && <SearchModal className="search-modal" />}
     </div>
   );
 };
