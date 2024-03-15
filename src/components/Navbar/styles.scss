@@ -10,7 +10,7 @@
     justify-content: space-between;
 
     .menu-logo-wrapper {
-      width: 15%;
+      width: 25%;
       .menu-icon {
         display: none;
       }
@@ -25,7 +25,7 @@
     }
 
     .menu-link-wrapper {
-      width: 70%;
+      width: 50%;
       justify-content: center;
 
       .menu-link {
@@ -38,10 +38,22 @@
     }
 
     .menu-cart-wrapper {
-      width: 12%;
+      width: 25%;
       display: flex;
       align-items: center;
       justify-content: space-around;
+
+      .input-group {
+        width: 60%;
+
+        input {
+          &:focus-visible {
+            border: 1px solid rgba(99, 98, 98, 0.548);
+            box-shadow: 0 0 0 1px #4c4c4c;
+          }
+        }
+      }
+
       .cart-logo {
         cursor: pointer;
       }
@@ -68,7 +80,7 @@
       padding: 12px 20px;
       .menu-logo-wrapper {
         display: flex;
-        width: 60%;
+        width: 50%;
         gap: 8px;
         align-items: center;
         .menu-icon {
@@ -84,7 +96,7 @@
       }
 
       .menu-cart-wrapper {
-        width: 30%;
+        width: 50%;
       }
     }
   }
