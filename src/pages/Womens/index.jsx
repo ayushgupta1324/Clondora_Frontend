@@ -1,10 +1,10 @@
 import "./styles.scss";
-import { Box, Grid, Heading, HStack, Select, Text } from "@chakra-ui/react";
+import { Box, Grid, HStack, Select, Text } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import Product from "../../components/product";
-import SkeletonComponent from "../../components/SkeletonComponent";
+import Product from "components/product";
+import SkeletonComponent from "components/SkeletonComponent";
 
 const WomenPage = () => {
   const navigate = useNavigate();
@@ -26,6 +26,8 @@ const WomenPage = () => {
   useEffect(() => {
     setIsLoading(true);
     getProducts();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sort]);
 
   return (
