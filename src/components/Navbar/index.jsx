@@ -4,14 +4,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Box,
   Flex,
-  Input,
-  InputGroup,
-  InputRightAddon,
-  InputRightElement,
   Text,
 } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineSearch } from "react-icons/ai";
 import { BsHandbagFill } from "react-icons/bs";
 import { RouteStrings } from "Utils/Routes/RouteStrings";
 import Menubar from "components/ProfileMenu";
@@ -24,7 +19,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   // const {data}=useSelector((store)=>store.cart)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [showSearchModal, setShowSearchModal] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -134,16 +128,8 @@ const Navbar = () => {
           </Link>
         </Flex>
         <div className="menu-cart-wrapper">
-          <InputGroup className="input-group">
-            <Input placeholder="Search Products" />
-            <InputRightElement>
-              <AiOutlineSearch onClick={() => setShowSearchModal(true)} />
-            </InputRightElement>
-          </InputGroup>
-          <BsHandbagFill
-            className="cart-logo"
-            onClick={() => navigate(RouteStrings.cart)}
-          />
+          <SearchModal />
+          <BsHandbagFill className="cart-logo" onClick={() => navigate(RouteStrings.cart)} />
           <Menubar />
         </div>
       </Flex>

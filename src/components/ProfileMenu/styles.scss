@@ -6,6 +6,12 @@
     // .profile-logo {
     //   background-color: white;
     // }
+
+    span {
+      display: flex;
+      justify-content: center;
+    }
+
     &:hover {
       background-color: transparent;
       font-weight: bold;
