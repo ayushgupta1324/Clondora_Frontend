@@ -15,7 +15,7 @@ function Checkout() {
     onOpen();
     try {
       console.log("Data in cart",data)
-      await axios.post("https://white-lovebird-ring.cyclic.app/orders", data)
+      await axios.post("https://gentle-tan-starfish.cyclic.app/orders", data)
       
     } catch (error) {
       console.log("Error is",error)
