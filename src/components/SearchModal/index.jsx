@@ -1,3 +1,4 @@
+import './styles.scss'
 import { useState } from 'react'
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import axios from "axios";
@@ -40,6 +41,9 @@ const SearchModal = () => {
           <AiOutlineSearch />
         </InputRightElement>
       </InputGroup>
+      <div className='suggestion-area'>
+
+      </div>
     </div>
   );
 };
