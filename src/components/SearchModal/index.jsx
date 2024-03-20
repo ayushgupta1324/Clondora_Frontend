@@ -8,6 +8,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 const SearchModal = () => {
 
   const [searchList, setSearchList] = useState([])
+  const [isBlurred, setIsBlurred] = useState(false)
+  const [inFocus, setInFocus] = useState(false)
 
   const debounce = (func, delay) => {
     let timer;
@@ -23,9 +25,13 @@ const SearchModal = () => {
 
   const handleSearch = async (e) => {
     try {
-      const { data } = await axios.get(`https://gentle-tan-starfish.cyclic.app/products?search=${e.target.value}`);
-      console.log(data)
-      setSearchList(data)
+      if (e.target.value) {
+        const { data } = await axios.get(`https://gentle-tan-starfish.cyclic.app/products?search=${e.target.value}`);
+        setSearchList(data)
+        setInFocus(true)
+      } else {
+        setSearchList([])
+      }
     } catch (error) {
       console.log(error)
     }
@@ -33,15 +39,19 @@ const SearchModal = () => {
 
   const debounceWrapper = debounce(handleSearch, 500)
 
+  const handleBlur = () => {
+    setIsBlurred(true)
+  }
+
   return (
     <div className="search-container">
       <InputGroup className="input-group">
-        <Input onChange={(e) => debounceWrapper(e)} placeholder="Search Products" />
+        <Input onChange={(e) => debounceWrapper(e)} placeholder="Search Products" onFocus={() => setIsBlurred(false)} onBlur={() => handleBlur()} />
         <InputRightElement>
           <AiOutlineSearch />
         </InputRightElement>
       </InputGroup>
-      <div className='suggestion-area'>
+      <div className={`suggestion-area ${isBlurred ? 'blurred' : ''} ${inFocus && searchList.length ? 'focus' : ''}`} >
 
       </div>
     </div>
