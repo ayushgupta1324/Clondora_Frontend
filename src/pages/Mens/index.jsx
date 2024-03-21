@@ -19,7 +19,7 @@ const MensPage = () => {
 
   const getProducts = async () => {
     const { data } = await axios.get(
-      `https://white-lovebird-ring.cyclic.app/products?category=Men&price=${sort}`
+      `https://gentle-tan-starfish.cyclic.app/products?category=Men&price=${sort}`
     );
     setProducts(data);
     setIsLoading(false);

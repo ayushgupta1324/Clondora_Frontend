@@ -50,7 +50,7 @@ const LoginPage = () => {
 
   // ----------------LOGIN SUBMIT--------------------
   const handleTheSubmit = async () => {
-    const res = await axios.get("https://white-lovebird-ring.cyclic.app/user");
+    const res = await axios.get("https://gentle-tan-starfish.cyclic.app/user");
 
     if (formstate.email && formstate.password) {
       dispatch(userLogin(formstate)).then((res) => {

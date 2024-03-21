@@ -13,7 +13,7 @@ const KidsPage = () => {
 
   const getProducts = async () => {
     const { data } = await axios.get(
-      `https://white-lovebird-ring.cyclic.app/products?category=Children&price=${sort}`
+      `https://gentle-tan-starfish.cyclic.app/products?category=Children&price=${sort}`
     );
     setProducts(data);
     setIsLoading(false);

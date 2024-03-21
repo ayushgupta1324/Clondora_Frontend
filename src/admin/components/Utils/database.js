@@ -9,7 +9,7 @@ const getStatsApi = () => {
 }
 
 const getOrders = async () => {
-    const { data } = await axios.get(`https://white-lovebird-ring.cyclic.app/cart`);
+    const { data } = await axios.get(`https://gentle-tan-starfish.cyclic.app/cart`);
     return data
 }
 const updateOrder = () => {
@@ -17,32 +17,32 @@ const updateOrder = () => {
 }
 const addProductApi = async (product) => {
     try {
-        return await axios.post(`https://white-lovebird-ring.cyclic.app/products`, product);
+        return await axios.post(`https://gentle-tan-starfish.cyclic.app/products`, product);
     } catch (error) {
         return error
     }
 }
 const updateProductApi = async (id, updates) => {
     try {
-        return await axios.patch(`https://white-lovebird-ring.cyclic.app/products/${id}`, updates);
+        return await axios.patch(`https://gentle-tan-starfish.cyclic.app/products/${id}`, updates);
     } catch (error) {
         return error
     }
 }
 const deleteProductApi = async (id) => {
     try {
-        return await axios.delete(`https://white-lovebird-ring.cyclic.app/products/${id}`);
+        return await axios.delete(`https://gentle-tan-starfish.cyclic.app/products/${id}`);
     } catch (error) {
         return error
     }
 }
 const getProducts = async () => {
-    const { data } = await axios.get(`https://white-lovebird-ring.cyclic.app/products`);
+    const { data } = await axios.get(`https://gentle-tan-starfish.cyclic.app/products`);
     return data
 }
 
 const getUsersApi = async () => {
-    const { data } = await axios.get(`https://white-lovebird-ring.cyclic.app/user`);
+    const { data } = await axios.get(`https://gentle-tan-starfish.cyclic.app/user`);
     return data
 }
 export { getStatsApi, getOrders, updateOrder, addProductApi, getProducts, updateProductApi, deleteProductApi, getUsersApi }

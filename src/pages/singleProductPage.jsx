@@ -18,7 +18,7 @@ const SingleProductPage = () =>{
     const navigate = useNavigate()
     
     const getProduct = async () => {
-        const {data} = await axios.get(`https://white-lovebird-ring.cyclic.app/products/${id}`);
+        const {data} = await axios.get(`https://gentle-tan-starfish.cyclic.app/products/${id}`);
         setProduct(data)
     }
     
