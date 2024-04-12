@@ -33,7 +33,7 @@ const MensPage = () => {
     <>
       <Box className="page-container" pb="50px">
         <div className="page-heading" fontSize="16px">
-          Men’s OUTERWEAR
+          Men’s Outerwear
         </div>
         <Text fontSize="14px" m="auto" maxW={["70%", "50%", "30%"]}>
           Honouring the spirit of adventure inherent in every Clondora garment,

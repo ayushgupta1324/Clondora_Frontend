@@ -33,7 +33,7 @@ const WomenPage = () => {
   return (
     <Box className="page-container" pb="50px">
       <div className="page-heading" fontSize="16px">
-        Women’s OUTERWEAR
+        Women’s Outerwear
       </div>
       <Text fontSize="14px" m="auto" maxW={["70%", "50%", "30%"]}>
         Embrace adventures into the unknown with the Clondora women’s outerwear
@@ -86,11 +86,11 @@ const WomenPage = () => {
       {isLoading ? (
         <SkeletonComponent />
       ) : (
-        <Grid mt="50px" mb="50px" gap="2px" gridTemplateColumns="repeat(4,1fr)">
+        <div className="product-container">
           {products.map((item) => {
             return <Product key={item._id} {...item} />;
           })}
-        </Grid>
+        </div>
       )}
 
       {/* <Grid mt="50px" mb="50px" gap="2px" gridTemplateColumns="repeat(4,1fr)">

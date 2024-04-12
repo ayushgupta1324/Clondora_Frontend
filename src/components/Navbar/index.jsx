@@ -61,7 +61,7 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <Flex
-        className={`navbar-wrapper ${isScrolled && "scrolled"}`}
+        className={`navbar-wrapper`}
         alignItems={"center"}
         zIndex={"500"}
         justifyContent="space-between"
@@ -81,7 +81,7 @@ const Navbar = () => {
           />
           <Link to="/">
             <Text
-              className={`logo ${isScrolled && "scrolled"}`}
+              className={`logo`}
               fontSize={"20px"}
               fontWeight="500"
             >
@@ -91,7 +91,7 @@ const Navbar = () => {
         </Box>
         <Flex className="menu-link-wrapper" gap="24px">
           <Link
-            className={`menu-link ${isScrolled && "scrolled"}`}
+            className={`menu-link`}
             to={RouteStrings.men}
           >
             <Text
@@ -103,7 +103,7 @@ const Navbar = () => {
             </Text>
           </Link>
           <Link
-            className={`menu-link ${isScrolled && "scrolled"}`}
+            className={`menu-link`}
             to={RouteStrings.women}
           >
             <Text
@@ -115,7 +115,7 @@ const Navbar = () => {
             </Text>
           </Link>
           <Link
-            className={`menu-link ${isScrolled && "scrolled"}`}
+            className={`menu-link`}
             to={RouteStrings.kids}
           >
             <Text

@@ -4,6 +4,7 @@
   // position: fixed;
   width: 100%;
   .navbar-wrapper {
+    background: white;
     // position: relative;
     padding: 12px 24px;
     display: flex;
@@ -13,10 +14,6 @@
       width: 25%;
       .menu-icon {
         display: none;
-      }
-
-      .logo .scrolled {
-        color: white;
       }
 
       // .offer-auth-wrapper {
@@ -31,10 +28,6 @@
       .menu-link {
         display: block;
       }
-
-      .menu-link.scrolled {
-        color: #c6c6c6;
-      }
     }
 
     .menu-cart-wrapper {
@@ -47,10 +40,6 @@
         cursor: pointer;
       }
     }
-  }
-
-  .navbar-wrapper.scrolled {
-    background-color: rgba(0, 0, 0, 0.6);
   }
 
   // .search-modal {

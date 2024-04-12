@@ -28,8 +28,8 @@ const KidsPage = () => {
   }, [sort]);
 
   return (
-    <Box pb="50px">
-      <Heading fontSize="16px">Kids’S OUTERWEAR</Heading>
+    <Box className="page-container" pb="50px">
+      <Heading className="page-heading" fontSize="16px">Kids’s Outerwear</Heading>
       <Text fontSize="14px" m="auto" maxW={["70%", "50%", "30%"]}>
         From quilted jackets and puffer gilets to cotton piqué dresses and
         skirts, explore girls’ clothing awash with Clondora Check and Thomas
@@ -80,11 +80,11 @@ const KidsPage = () => {
       {isLoading ? (
         <SkeletonComponent />
       ) : (
-        <Grid mt="50px" mb="50px" gap="2px" gridTemplateColumns="repeat(4,1fr)">
+        <div className="product-container">
           {products.map((item) => {
             return <Product key={item._id} {...item} />;
           })}
-        </Grid>
+        </div>
       )}
 
       {/* <Button textTransform="uppercase" cursor="pointer" bg="transparent" padding="12px 40px">View 11 More</Button> */}

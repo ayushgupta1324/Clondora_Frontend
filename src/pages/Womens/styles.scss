@@ -1,3 +1,25 @@
+@import "./theme.scss";
+
 .page-container {
   padding-top: 72px;
+
+  .page-heading {
+    font-weight: bold;
+  }
+  .product-container {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+}
+
+@media (max-width: $device-small) {
+  .page-container {
+    padding-top: 72px;
+
+    .product-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
